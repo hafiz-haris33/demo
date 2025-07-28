@@ -121,7 +121,7 @@ Go to https://streamlit.io/cloud
 
 Connect your GitHub repo and deploy
 
-👨‍💻 Author
+## 👨‍💻 Author
 Hafiz Muhammad Haris Attique
 Machine Learning | Data Science Enthusiast
 📫 LinkedIn Profile
