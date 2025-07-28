@@ -4,6 +4,12 @@ This project predicts the **median house value** in different districts of Calif
 
 ---
 
+## 🚀 Live App
+
+👉 [Click here to run the Streamlit app](https://your-streamlit-app-link)
+
+---
+
 ## 📊 Dataset
 
 - **Source**: [California Housing Dataset](https://github.com/ageron/data/raw/main/housing.tgz)
