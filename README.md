@@ -6,24 +6,26 @@ This project predicts the **median house value** in different districts of Calif
 
 ## 📊 Dataset
 
-- **Source**: [StatLib Repository (California Housing)](https://www.dcc.fc.up.pt/~ltorgo/Regression/cal_housing.html)
+- **Source**: [California Housing Dataset](https://github.com/ageron/data/raw/main/housing.tgz)
 - **Attributes**:
-  - Longitude, Latitude  
-  - Housing median age  
-  - Total rooms, Total bedrooms  
-  - Population, Households  
-  - Median income  
-  - Median house value (target)
+  - longitude, latitude  
+  - housing_median_age  
+  - total_rooms, total_bedrooms  
+  - population, households  
+  - median_income  
+  - median_house_value (target)
+  - ocean_proximity
 
 ---
 
 ## 🧠 Machine Learning Workflow
 
 ### 🔹 Step 1: Data Collection
-- Loaded the dataset using `fetch_california_housing()` function from `sklearn.datasets`.
+- The housing dataset was programmatically downloaded from an online GitHub source, extracted using the tarfile module, and loaded into a pandas DataFrame.
 
 ### 🔹 Step 2: Train-Test Split (Early)
 - Split the data using **stratified sampling** based on income category to avoid data leakage.
+- Binned median income into categories for stratified sampling.
 
 ### 🔹 Step 3: Exploratory Data Analysis (EDA)
 - Checked dataset shape, null values, data types, and distribution.
@@ -35,10 +37,9 @@ This project predicts the **median house value** in different districts of Calif
 
 ### 🔹 Step 4: Feature Engineering
 - Created new features:
-  - `rooms_per_household`  
-  - `bedrooms_per_room`  
-  - `population_per_household`
-- Binned median income into categories for stratified sampling.
+  - `rooms_per_house`  
+  - `bedrooms_ratio`  
+  - `people_per_house`
 
 ### 🔹 Step 5: Data Preprocessing
 - Used `Pipeline` and `ColumnTransformer` from `sklearn`:
@@ -46,6 +47,7 @@ This project predicts the **median house value** in different districts of Calif
     - Numerical features  
     - Categorical features (e.g., one-hot encoding)  
     - Derived ratio features
+    - Skewed features (Log pipeline)
   - Custom transformer for clustering similarity.
 
 ### 🔹 Step 6: Model Selection & Training
@@ -80,7 +82,6 @@ Trained multiple models:
 - Interactive UI built using **Streamlit**  
 - Allows user to input housing attributes  
 - Predicts median house value instantly  
-- Download prediction as PDF
 
 ---
 
@@ -91,7 +92,6 @@ Trained multiple models:
 - **XGBoost, Matplotlib, Seaborn**  
 - **Streamlit (App Interface)**  
 - **Joblib (Model saving/loading)**  
-- **FPDF (Generate PDF Reports)**
 
 ---
 
@@ -135,7 +135,7 @@ App can be deployed on **Streamlit Cloud**:
 
 **Hafiz Muhammad Haris Attique**  
 _Machine Learning | Data Science Enthusiast_  
-📫 [LinkedIn Profile](https://www.linkedin.com/in/hafiz-muhammad-haris-attique)
+📫 [LinkedIn Profile](https://www.linkedin.com/in/hafiz-muhammad-haris-305211361)
 
 ---
 
